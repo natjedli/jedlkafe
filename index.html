@@ -1,2 +1,84 @@
-main page
-<a href="kontakt.html">muj dokaz</a>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JedlKafe</title>
+  <!-- Odkaz na soubor se styly -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HLAVIČKA STRÁNKY -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo (může být klidně obrázek nebo SVG) -->
+      <div class="logo">
+        <img src="images/logo.svg" alt="JedlKafe Logo" />
+      </div>
+
+      <!-- Hamburger menu ikonka -->
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <!-- Navigační odkazy (skryté v mobilu, zobrazí se po kliknutí na hamburger) -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="menu.html">Nabídka</a></li>
+        <li><a href="onas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HLAVNÍ OBSAH STRÁNKY -->
+  <main>
+    <!-- Např. uvítací sekce s velkým nadpisem a krátkým textem -->
+    <section class="hero">
+      <h1>Vítejte v JedlKafe</h1>
+      <p>
+        V naší cozy kavárně vás přivítá vůně kávy a pohoda. 
+        Jsme JedlKafe – místo, kde se snoubí klid, útulné prostředí a nevšední chutě.
+      </p>
+      <!-- Tady by mohla být hlavní fotka kavárny -->
+      <!-- <img src="images/kavarna.jpg" alt="Fotka kavárny" /> -->
+    </section>
+
+    <!-- Sekce s fotkami (můžeš libovolně upravit, přidat texty atd.) -->
+    <section class="photo-grid">
+      <div class="photo-box">
+        <h2>Fotka baristy</h2>
+        <!-- <img src="images/barista.jpg" alt="Barista" /> -->
+      </div>
+      <div class="photo-box">
+        <h2>Fotka kávy</h2>
+        <!-- <img src="images/coffee.jpg" alt="Káva" /> -->
+      </div>
+      <div class="photo-box">
+        <h2>Fotka kavárny</h2>
+        <!-- <img src="images/cafe_interior.jpg" alt="Interiér kavárny" /> -->
+      </div>
+    </section>
+  </main>
+
+  <!-- PATIČKA STRÁNKY -->
+  <footer>
+    <p>&copy; 2025 JedlKafe</p>
+  </footer>
+
+  <!-- JavaScript pro hamburger menu -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
