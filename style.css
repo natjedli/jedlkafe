@@ -1,1 +1,129 @@
-ahoj ty torpedo
+/* ===== Reset základních stylů ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9f7f4; /* Světlounká, útulná barva pozadí */
+  color: #333;               /* Základní barva písma */
+}
+
+/* ===== Navigační lišta ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e9dccb; /* Jemná "coffee" barva */
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo img {
+  width: 100px; /* Zmenšíme logo, uprav podle potřeby */
+}
+
+/* Hamburger menu – standardně schované na desktopu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Seznam odkazů – na desktopu zobrazený vedle loga */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #7c6b54; /* Tmavší odstín kávy */
+}
+
+/* ===== Responsivita (mobilní zařízení) ===== */
+@media (max-width: 768px) {
+  /* Hamburger zobrazíme, když je šířka <= 768px */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Navigační odkazy se schovají za hamburger */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #e9dccb;
+    width: 200px;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Když má .nav-links třídu .active, vysune se z pravé strany */
+  .nav-links.active {
+    transform: translateX(0%);
+  }
+
+  .nav-links li {
+    margin: 1rem;
+  }
+}
+
+/* ===== Hero sekce ===== */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fff; /* Bílá sekce */
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Sekce s fotkami (grid) ===== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  padding: 0 1rem 2rem 1rem;
+}
+
+.photo-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ===== Patička ===== */
+footer {
+  background-color: #e9dccb;
+  text-align: center;
+  padding: 1rem;
+}
