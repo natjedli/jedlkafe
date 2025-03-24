@@ -1,1 +1,91 @@
-nabizime
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabídka | JedlKafe</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HLAVIČKA -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo JedlKafe" />
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="menu.html">Nabídka</a></li>
+        <li><a href="onas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HLAVNÍ OBSAH -->
+  <main>
+    <section class="hero">
+      <h1>Naše nabídka</h1>
+      <p>V JedlKafe spojujeme lásku ke kávě, domácím dobrotám a přirozené pohodě.</p>
+    </section>
+
+    <section class="menu-section">
+      <h2>Káva</h2>
+      <ul>
+        <li>Espresso</li>
+        <li>Cappuccino</li>
+        <li>Latte</li>
+        <li><strong>Káva s příchutí jedličky</strong> – naše signature specialita</li>
+      </ul>
+
+      <h2>Sezónní nápoje</h2>
+      <p>Limitované edice s chutí přírody – např. skořice, jedlové jehličí, levandule.</p>
+
+      <h2>Čaje</h2>
+      <ul>
+        <li>Zelený</li>
+        <li>Černý</li>
+        <li>Ovocné</li>
+      </ul>
+
+      <h2>Domácí dezerty</h2>
+      <ul>
+        <li>Koláče (sezónní, např. hruškový, makový)</li>
+        <li>Cheesecake s karamelem</li>
+        <li>Sušenky pečené s láskou</li>
+      </ul>
+
+      <h2>Snídaňové menu</h2>
+      <ul>
+        <li>Sendviče s domácí pomazánkou</li>
+        <li>Máslové croissanty</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- PATIČKA -->
+  <footer>
+    <p>&copy; 2025 JedlKafe</p>
+  </footer>
+
+  <!-- HAMBURGER MENU -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
