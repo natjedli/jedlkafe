@@ -15,4 +15,63 @@
       <div class="logo">
         <img src="logo.png" alt="Logo JedlKafe" />
       </div>
-      <div class
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="menu.html">Nabídka</a></li>
+        <li><a href="onas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- OBSAH STRÁNKY -->
+  <main>
+    <section class="menu-section">
+      <h1>Kontakt</h1>
+
+      <h2>Adresa</h2>
+      <p>Útesa 444, Praha 12</p>
+
+      <h2>Otevírací doba</h2>
+      <ul>
+        <li>Po–Pá: 6:00 – 19:00</li>
+        <li>So–Ne: 7:00 – 18:00</li>
+      </ul>
+
+      <h2>Telefon</h2>
+      <p><a href="tel:+420747474747">747 474 747</a></p>
+
+      <h2>Email</h2>
+      <p><a href="mailto:jedlkafe4@gmail.com">jedlkafe4@gmail.com</a></p>
+
+      <p>Na e-maily odpovídáme zpravidla do 24 hodin.</p>
+
+      <h2>Zastavte se!</h2>
+      <p>Najdete nás kousek od zastávky MHD „Jedlová“. Kavárna je snadno dostupná a těšíme se na vaši návštěvu!</p>
+    </section>
+  </main>
+
+  <!-- PATIČKA -->
+  <footer>
+    <p>&copy; 2025 JedlKafe</p>
+  </footer>
+
+  <!-- HAMBURGER MENU -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
