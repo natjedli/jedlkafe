@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | JedlKafe</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HLAVIČKA -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo JedlKafe" />
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="menu.html">Nabídka</a></li>
+        <li><a href="onas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- OBSAH STRÁNKY -->
+  <main>
+    <section class="menu-section">
+      <img src="coffeemaking.jpg" alt="Příprava kávy" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;" />
+
+      <h1>Blog kavárny JedlKafe</h1>
+      <p>Vítejte na našem blogu! Tady s vámi sdílíme tipy, recepty, příběhy ze zákulisí a vše, co dělá JedlKafe jedinečným.</p>
+
+      <h2>Jak na dokonalé espresso?</h2>
+      <p>Espresso je základní káva, která vyžaduje správný poměr kávy a vody – ideálně 1:2. Teplota vody by měla být 90–96 °C, tlak kolem 9 barů a extrakce by měla trvat 25 až 30 sekund.</p>
+      <p>Klíčem k perfektní chuti je nejen správná technika, ale i čerstvá káva – tu si u nás pražíme každé ráno.</p>
+
+      <h2>Domácí cold brew</h2>
+      <p>Cold brew je osvěžující a jemná káva připravovaná za studena. Do velké nádoby dejte 100 g hrubě namleté kávy a 1 litr studené vody. Nechte luhovat v lednici 12 až 24 hodin. Poté přefiltrujte a podávejte s kostkami ledu a plátkem pomeranče.</p>
+
+      <h2>Káva se sirupem z jedliček</h2>
+      <p>Náš <strong>domácí jedlový sirup</strong> je unikátní chuťový zážitek – ať už ho přidáte do cappuccina nebo latte, vykouzlíte nezapomenutelný lesní nádech.</p>
+      <p><strong>Recept:</strong> Připravte si espresso, přidejte lžičku jedlového sirupu a zalijte horkým našlehaným mlékem. Navrch posypte špetkou skořice nebo vanilkového cukru.</p>
+      <p><em>Jedlový sirup zakoupíte exkluzivně v naší kamenné kavárně!</em></p>
+
+      <h2>Latte art pro začátečníky</h2>
+      <p>Začínáte s latte artem? Zkuste „srdíčko“ – začněte nalévat mléko pomalu, v polovině zvyšte proud a zakončete jemným přetažením středem. Trénink dělá mistra, tak si to užijte!</p>
+
+      <h2>Bonus: Kávový deníček</h2>
+      <p>Doporučujeme vést si vlastní malý deník, kam si zapisujete, jakou kávu jste pili, co vám chutnalo, co méně. Naučíte se tak rozlišovat tóny a budete mít z kávy ještě větší radost.</p>
+    </section>
+  </main>
+
+  <!-- PATIČKA -->
+  <footer>
+    <p>&copy; 2025 JedlKafe</p>
+  </footer>
+
+  <!-- HAMBURGER MENU -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
