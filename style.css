@@ -169,3 +169,29 @@ footer {
   text-align: center;
   color: #333;
 }
+/* ==== Sekce Nabídky ==== */
+.menu-section {
+  padding: 2rem;
+  background-color: #fff;
+  border-top: 2px solid #e9dccb;
+  border-bottom: 2px solid #e9dccb;
+}
+
+.menu-section h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #6c4c3b; /* jemná kávová barva */
+}
+
+.menu-section ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.menu-section li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
