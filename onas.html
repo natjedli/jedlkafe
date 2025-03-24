@@ -1,1 +1,81 @@
-kdo jsme?
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O nás | JedlKafe</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HLAVIČKA -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo JedlKafe" />
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="menu.html">Nabídka</a></li>
+        <li><a href="onas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- OBSAH STRÁNKY -->
+  <main>
+    <section class="menu-section">
+      <h1>O nás</h1>
+
+      <h2>Kdo jsme?</h2>
+      <p>Jsme kavárna inspirovaná přírodou, vůní jedlových větví a pohodou. U nás si odpočinete, ať už přijdete na chvíli ticha nebo si popovídat s přáteli.</p>
+      <p>Máme relax koutek bez hluku a ruchu – ideální pro studenty i snílky.</p>
+
+      <h2>Naše hodnoty</h2>
+      <ul>
+        <li>Kvalitní lokální suroviny</li>
+        <li>Přátelská atmosféra bez spěchu</li>
+        <li>Osobní přístup ke každému zákazníkovi</li>
+        <li>Upřímná láska ke kávě (a trochu i k jedlovému jehličí)</li>
+        <li>Podpora místních umělců – vystavujeme jejich tvorbu</li>
+      </ul>
+
+      <h2>Proč "JedlKafe"?</h2>
+      <p>Název vznikl jako pocta majitelce s příjmením Jedličková – a také kvůli naší jedinečné specialitě: kávě s příchutí jedličky.</p>
+
+      <h2>Pro koho jsme?</h2>
+      <ul>
+        <li>Pro studenty hledající klid na učení</li>
+        <li>Pro milovníky kávy a domácké atmosféry</li>
+        <li>Pro ty, kdo mají rádi teplý čaj, knížky a měkké deky</li>
+        <li>Pro každého, kdo si chce na chvíli oddechnout</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- PATIČKA -->
+  <footer>
+    <p>&copy; 2025 JedlKafe</p>
+  </footer>
+
+  <!-- HAMBURGER MENU -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
