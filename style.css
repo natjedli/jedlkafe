@@ -228,3 +228,14 @@ footer {
   background-color: #f9f4f0;
   border-left: 5px solid #c68b59;
 }
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.responsive-img:hover {
+  transform: scale(1.05);
+}
