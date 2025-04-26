@@ -207,3 +207,24 @@ footer {
   color: #555;
   margin-top: 2rem;
 }
+.quiz-section {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.quiz-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-result {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f4f0;
+  border-left: 5px solid #c68b59;
+}
