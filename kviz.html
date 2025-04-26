@@ -99,29 +99,22 @@ function showResult() {
     let result = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
 
     let text = "";
-    let imageUrl = "";
 
     if (result === "espresso") {
         text = "Jsi jako espresso – rychlý, silný a vždy připravený na akci.";
-        imageUrl = "https://images.unsplash.com/photo-1586481221707-84bd0c044d43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
     } else if (result === "latte") {
         text = "Jsi jako latte – jemná duše, která miluje klid a teplou atmosféru.";
-        imageUrl = "https://images.unsplash.com/photo-1527261834078-9b37d35a4a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
     } else if (result === "iced") {
         text = "Jsi jako ledová káva – svěží, odvážný a nikdy tě nic nezastaví.";
-        imageUrl = "https://images.unsplash.com/photo-1520948019733-6d10f0f5d06b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
     } else if (result === "mocha") {
         text = "Jsi jako moka – sladký, pohodový a miluješ radostné chvíle.";
-        imageUrl = "https://images.unsplash.com/photo-1569171409219-78f5a2c8c149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
     } else if (result === "flatwhite") {
         text = "Jsi jako flat white – elegantní, vyrovnaný a s jemnou silou uvnitř.";
-        imageUrl = "https://images.unsplash.com/photo-1600851582444-30f1c6c7b6df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
     }
 
     document.getElementById("result").innerHTML = `
         <h2>Výsledek:</h2>
         <p>${text}</p>
-        <img src="${imageUrl}" alt="Výsledek kávy" class="responsive-img" style="margin-top: 1rem; border-radius: 8px; max-width: 100%;">
     `;
 }
 </script>
