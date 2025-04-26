@@ -199,3 +199,11 @@ footer {
   font-size: 1.15rem;
   line-height: 1.8;
 }
+.study-footer {
+  background-color: #f0e9e0;  /* jemná barva ladící se zbytkem webu */
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2rem;
+}
