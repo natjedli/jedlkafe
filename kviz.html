@@ -16,6 +16,7 @@
         <li><a href="menu.html">Nabídka</a></li>
         <li><a href="onas.html">O nás</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
         <li><a href="kviz.html">Kvíz</a></li>
       </ul>
     </nav>
@@ -24,20 +25,48 @@
   <main class="quiz-section">
     <h1>Kávový kvíz: Jaká káva jsi?</h1>
     <form id="coffeeQuiz">
+
       <p>1. Kdy nejraději piješ kávu?</p>
-      <label><input type="radio" name="q1" value="espresso"> Ráno, hned po probuzení</label><br>
-      <label><input type="radio" name="q1" value="latte"> Dopoledne při práci</label><br>
-      <label><input type="radio" name="q1" value="iced"> Odpoledne na osvěžení</label><br><br>
+      <label><input type="radio" name="q1" value="espresso"> Ráno po probuzení</label><br>
+      <label><input type="radio" name="q1" value="latte"> Dopoledne při relaxu</label><br>
+      <label><input type="radio" name="q1" value="iced"> Odpoledne na osvěžení</label><br>
+      <label><input type="radio" name="q1" value="mocha"> Večer jako dezert</label><br><br>
 
-      <p>2. Jaký máš nejradši styl kavárny?</p>
-      <label><input type="radio" name="q2" value="latte"> Klidný a útulný</label><br>
-      <label><input type="radio" name="q2" value="espresso"> Moderní a rychlý</label><br>
-      <label><input type="radio" name="q2" value="iced"> Trendy s hudbou</label><br><br>
+      <p>2. Jaká je tvá oblíbená atmosféra v kavárně?</p>
+      <label><input type="radio" name="q2" value="latte"> Klid a knížky</label><br>
+      <label><input type="radio" name="q2" value="iced"> Hluk a přátelé</label><br>
+      <label><input type="radio" name="q2" value="espresso"> Minimalistický design</label><br>
+      <label><input type="radio" name="q2" value="flatwhite"> Vintage styl</label><br><br>
 
-      <p>3. Co hledáš v kávě?</p>
-      <label><input type="radio" name="q3" value="espresso"> Sílu a energii</label><br>
-      <label><input type="radio" name="q3" value="latte"> Pohodu a teplo</label><br>
-      <label><input type="radio" name="q3" value="iced"> Chuť a osvěžení</label><br><br>
+      <p>3. Jakou sladkost si dáš ke kávě?</p>
+      <label><input type="radio" name="q3" value="mocha"> Čokoládový dort</label><br>
+      <label><input type="radio" name="q3" value="latte"> Croissant</label><br>
+      <label><input type="radio" name="q3" value="espresso"> Nic – káva stačí</label><br>
+      <label><input type="radio" name="q3" value="iced"> Ovocný koláč</label><br><br>
+
+      <p>4. Vyber svůj vysněný víkend:</p>
+      <label><input type="radio" name="q4" value="iced"> Dobrodružství a výlety</label><br>
+      <label><input type="radio" name="q4" value="latte"> Relax a domácí pohodlí</label><br>
+      <label><input type="radio" name="q4" value="espresso"> Práce na vlastních projektech</label><br>
+      <label><input type="radio" name="q4" value="mocha"> Filmový maraton</label><br><br>
+
+      <p>5. Tvůj oblíbený doplněk?</p>
+      <label><input type="radio" name="q5" value="flatwhite"> Šála a teplý svetr</label><br>
+      <label><input type="radio" name="q5" value="iced"> Sluneční brýle a batoh</label><br>
+      <label><input type="radio" name="q5" value="espresso"> Elegantní hodinky</label><br>
+      <label><input type="radio" name="q5" value="mocha"> Kožená bunda</label><br><br>
+
+      <p>6. Jakou hudbu posloucháš při pití kávy?</p>
+      <label><input type="radio" name="q6" value="latte"> Jazz nebo klavír</label><br>
+      <label><input type="radio" name="q6" value="iced"> Pop nebo indie</label><br>
+      <label><input type="radio" name="q6" value="espresso"> Klidná ambientní hudba</label><br>
+      <label><input type="radio" name="q6" value="mocha"> Rock nebo retro</label><br><br>
+
+      <p>7. Tvůj ideální šálek kávy je:</p>
+      <label><input type="radio" name="q7" value="espresso"> Malý a silný</label><br>
+      <label><input type="radio" name="q7" value="latte"> Velký a mléčný</label><br>
+      <label><input type="radio" name="q7" value="iced"> Studený a osvěžující</label><br>
+      <label><input type="radio" name="q7" value="mocha"> Sladký a čokoládový</label><br><br>
 
       <button type="button" onclick="showResult()">Zobrazit výsledek</button>
     </form>
@@ -53,21 +82,37 @@
   <script>
     function showResult() {
       const answers = document.querySelectorAll('input[type="radio"]:checked');
-      let counts = { espresso: 0, latte: 0, iced: 0 };
+      let counts = { espresso: 0, latte: 0, iced: 0, mocha: 0, flatwhite: 0 };
       answers.forEach(a => counts[a.value]++);
       let result = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+
       let text = "";
+      let imageUrl = "";
 
       if (result === "espresso") {
-        text = "Jsi jako espresso – silná, rychlá a máš energii na rozdávání!";
+        text = "Jsi jako espresso – rychlý, silný a vždy připravený na akci.";
+        imageUrl = "https://www.jidelniplan.cz/images/recipes/espresso-lungo.jpg";
       } else if (result === "latte") {
-        text = "Jsi jako latte – jemná duše, která miluje klid, pohodlí a teplé chvíle.";
-      } else {
-        text = "Jsi jako ledová káva – svěží, originální a vždycky stylová!";
+        text = "Jsi jako latte – jemná duše, která miluje klid a teplou atmosféru.";
+        imageUrl = "https://www.lazenskakava.cz/wp-content/uploads/2020/01/flat-white-1.jpg";
+      } else if (result === "iced") {
+        text = "Jsi jako ledová káva – svěží, odvážný a nikdy tě nic nezastaví.";
+        imageUrl = "https://www.prozeny.cz/images/articles/64696/ledova-kava.jpg";
+      } else if (result === "mocha") {
+        text = "Jsi jako moka – sladký, pohodový a miluješ radostné chvíle.";
+        imageUrl = "https://ebenica.cz/wp-content/uploads/2019/06/moka-kava.jpg";
+      } else if (result === "flatwhite") {
+        text = "Jsi jako flat white – elegantní, vyrovnaný a s jemnou silou uvnitř.";
+        imageUrl = "https://www.lazenskakava.cz/wp-content/uploads/2020/01/flat-white-1.jpg";
       }
 
-      document.getElementById("result").innerHTML = `<h2>Výsledek:</h2><p>${text}</p>`;
+      document.getElementById("result").innerHTML = `
+        <h2>Výsledek:</h2>
+        <p>${text}</p>
+        <img src="${imageUrl}" alt="Výsledek kávy" class="responsive-img" style="margin-top: 1rem; border-radius: 8px; max-width: 100%;">
+      `;
     }
   </script>
+
 </body>
 </html>
