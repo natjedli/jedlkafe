@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Kávový kvíz | JedlKafe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo JedlKafe" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="menu.html">Nabídka</a></li>
+        <li><a href="onas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="quiz-section">
+    <h1>Kávový kvíz: Jaká káva jsi?</h1>
+    <form id="coffeeQuiz">
+      <p>1. Kdy nejraději piješ kávu?</p>
+      <label><input type="radio" name="q1" value="espresso"> Ráno, hned po probuzení</label><br>
+      <label><input type="radio" name="q1" value="latte"> Dopoledne při práci</label><br>
+      <label><input type="radio" name="q1" value="iced"> Odpoledne na osvěžení</label><br><br>
+
+      <p>2. Jaký máš nejradši styl kavárny?</p>
+      <label><input type="radio" name="q2" value="latte"> Klidný a útulný</label><br>
+      <label><input type="radio" name="q2" value="espresso"> Moderní a rychlý</label><br>
+      <label><input type="radio" name="q2" value="iced"> Trendy s hudbou</label><br><br>
+
+      <p>3. Co hledáš v kávě?</p>
+      <label><input type="radio" name="q3" value="espresso"> Sílu a energii</label><br>
+      <label><input type="radio" name="q3" value="latte"> Pohodu a teplo</label><br>
+      <label><input type="radio" name="q3" value="iced"> Chuť a osvěžení</label><br><br>
+
+      <button type="button" onclick="showResult()">Zobrazit výsledek</button>
+    </form>
+
+    <div id="result" class="quiz-result"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 JedlKafe</p>
+    <p class="study-footer">Pouze pro studijní účely</p>
+  </footer>
+
+  <script>
+    function showResult() {
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      let counts = { espresso: 0, latte: 0, iced: 0 };
+      answers.forEach(a => counts[a.value]++);
+      let result = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+      let text = "";
+
+      if (result === "espresso") {
+        text = "Jsi jako espresso – silná, rychlá a máš energii na rozdávání!";
+      } else if (result === "latte") {
+        text = "Jsi jako latte – jemná duše, která miluje klid, pohodlí a teplé chvíle.";
+      } else {
+        text = "Jsi jako ledová káva – svěží, originální a vždycky stylová!";
+      }
+
+      document.getElementById("result").innerHTML = `<h2>Výsledek:</h2><p>${text}</p>`;
+    }
+  </script>
+</body>
+</html>
