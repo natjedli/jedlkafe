@@ -1,33 +1,140 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvíz | JedlKafe</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HLAVIČKA -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo JedlKafe"></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="menu.html">Nabídka</a></li>
+            <li><a href="onas.html">O nás</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="kviz.html">Kvíz</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- OBSAH STRÁNKY -->
+<main>
+    <section class="quiz-section">
+        <h1>Kávový kvíz</h1>
+
+        <form id="quizForm">
+            <p>1. Jaký je tvůj ideální způsob relaxace?</p>
+            <label><input type="radio" name="q1" value="espresso"> Rychlý výlet</label><br>
+            <label><input type="radio" name="q1" value="latte"> Klidná procházka</label><br>
+            <label><input type="radio" name="q1" value="iced"> Sportovní aktivita</label><br>
+            <label><input type="radio" name="q1" value="mocha"> Domácí lenošení</label><br>
+
+            <p>2. Tvůj oblíbený dezert je?</p>
+            <label><input type="radio" name="q2" value="mocha"> Čokoládový dort</label><br>
+            <label><input type="radio" name="q2" value="iced"> Zmrzlina</label><br>
+            <label><input type="radio" name="q2" value="latte"> Cheesecake</label><br>
+            <label><input type="radio" name="q2" value="espresso"> Makronky</label><br>
+
+            <p>3. Jaké je tvé oblíbené roční období?</p>
+            <label><input type="radio" name="q3" value="iced"> Léto</label><br>
+            <label><input type="radio" name="q3" value="latte"> Jaro</label><br>
+            <label><input type="radio" name="q3" value="espresso"> Podzim</label><br>
+            <label><input type="radio" name="q3" value="mocha"> Zima</label><br>
+
+            <p>4. Jaký outfit nejraději nosíš?</p>
+            <label><input type="radio" name="q4" value="espresso"> Kožená bunda</label><br>
+            <label><input type="radio" name="q4" value="latte"> Pletený svetr</label><br>
+            <label><input type="radio" name="q4" value="iced"> Letní šaty</label><br>
+            <label><input type="radio" name="q4" value="mocha"> Pohodlné tepláky</label><br>
+
+            <p>5. Jakou hudbu posloucháš při pití kávy?</p>
+            <label><input type="radio" name="q5" value="latte"> Jazz nebo klavír</label><br>
+            <label><input type="radio" name="q5" value="iced"> Pop nebo indie</label><br>
+            <label><input type="radio" name="q5" value="espresso"> Rock nebo retro</label><br>
+            <label><input type="radio" name="q5" value="mocha"> Chillout ambient</label><br>
+
+            <p>6. Tvůj ideální šálek kávy je:</p>
+            <label><input type="radio" name="q6" value="espresso"> Malý a silný</label><br>
+            <label><input type="radio" name="q6" value="latte"> Velký a mléčný</label><br>
+            <label><input type="radio" name="q6" value="iced"> Studený a osvěžující</label><br>
+            <label><input type="radio" name="q6" value="mocha"> Sladký a čokoládový</label><br>
+
+            <br>
+            <button type="button" onclick="showResult()">Zobrazit výsledek</button>
+        </form>
+
+        <div id="result" class="quiz-result"></div>
+    </section>
+</main>
+
+<!-- PATIČKA -->
+<footer>
+    <p>&copy; 2025 JedlKafe</p>
+</footer>
+<footer class="study-footer">
+    <p>Pouze pro studijní účely</p>
+</footer>
+
+<!-- SCRIPT NA VÝSLEDEK -->
 <script>
-const answers = document.querySelectorAll('input[type="radio"]:checked');
-let counts = { espresso: 0, latte: 0, iced: 0, mocha: 0, flatwhite: 0 };
+function showResult() {
+    const answers = document.querySelectorAll('input[type="radio"]:checked');
+    let counts = { espresso: 0, latte: 0, iced: 0, mocha: 0, flatwhite: 0 };
 
-answers.forEach(a => counts[a.value]++);
-let result = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
+    answers.forEach(a => counts[a.value]++);
+    let result = Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
 
-let text = "";
-let imageUrl = "";
+    let text = "";
+    let imageUrl = "";
 
-if (result === "espresso") {
-    text = "Jsi jako espresso – rychlý, silný a vždy připravený na akci.";
-    imageUrl = "https://images.unsplash.com/photo-1586481221707-84bd0c044d43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
-} else if (result === "latte") {
-    text = "Jsi jako latte – jemná duše, která miluje klid a teplou atmosféru.";
-    imageUrl = "https://images.unsplash.com/photo-1527261834078-9b37d35a4a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
-} else if (result === "iced") {
-    text = "Jsi jako ledová káva – svěží, odvážný a nikdy tě nic nezastaví.";
-    imageUrl = "https://images.unsplash.com/photo-1520948019733-6d10f0f5d06b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
-} else if (result === "mocha") {
-    text = "Jsi jako moka – sladký, pohodový a miluješ radostné chvíle.";
-    imageUrl = "https://images.unsplash.com/photo-1569171409219-78f5a2c8c149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
-} else if (result === "flatwhite") {
-    text = "Jsi jako flat white – elegantní, vyrovnaný a s jemnou silou uvnitř.";
-    imageUrl = "https://images.unsplash.com/photo-1600851582444-30f1c6c7b6df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
+    if (result === "espresso") {
+        text = "Jsi jako espresso – rychlý, silný a vždy připravený na akci.";
+        imageUrl = "https://images.unsplash.com/photo-1586481221707-84bd0c044d43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
+    } else if (result === "latte") {
+        text = "Jsi jako latte – jemná duše, která miluje klid a teplou atmosféru.";
+        imageUrl = "https://images.unsplash.com/photo-1527261834078-9b37d35a4a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
+    } else if (result === "iced") {
+        text = "Jsi jako ledová káva – svěží, odvážný a nikdy tě nic nezastaví.";
+        imageUrl = "https://images.unsplash.com/photo-1520948019733-6d10f0f5d06b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
+    } else if (result === "mocha") {
+        text = "Jsi jako moka – sladký, pohodový a miluješ radostné chvíle.";
+        imageUrl = "https://images.unsplash.com/photo-1569171409219-78f5a2c8c149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
+    } else if (result === "flatwhite") {
+        text = "Jsi jako flat white – elegantní, vyrovnaný a s jemnou silou uvnitř.";
+        imageUrl = "https://images.unsplash.com/photo-1600851582444-30f1c6c7b6df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600";
+    }
+
+    document.getElementById("result").innerHTML = `
+        <h2>Výsledek:</h2>
+        <p>${text}</p>
+        <img src="${imageUrl}" alt="Výsledek kávy" class="responsive-img" style="margin-top: 1rem; border-radius: 8px; max-width: 100%;">
+    `;
 }
-
-document.getElementById("result").innerHTML = `
-    <h2>Výsledek:</h2>
-    <p>${text}</p>
-    <img src="${imageUrl}" alt="Výsledek kávy" class="responsive-img" style="margin-top: 1rem; border-radius: 8px; max-width: 100%;">
-`;
 </script>
+
+<!-- HAMBURGER MENU -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
