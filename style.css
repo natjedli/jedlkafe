@@ -22,7 +22,11 @@ body {
 }
 
 .logo img {
-  width: 100px; /* Zmenšíme logo, uprav podle potřeby */
+  width: 80px;            /* Mírně zmenšíme, ale klidně nech 100px pokud chceš */
+  height: 80px;           /* Přidáme pevnou výšku */
+  border-radius: 50%;     /* Zaoblíme na kolečko */
+  object-fit: cover;      /* Obrázek hezky vyplní prostor */
+}
 }
 
 /* Hamburger menu – standardně schované na desktopu */
